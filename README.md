@@ -20,3 +20,8 @@ git push origin v0.0.1
 
 В своем проекте установи пакет с этим репозиторием:
 - `go get github.com/AndrewTarev/proto-repo`
+
+Затем импортируйте в проекте сгенерированные файлы:
+```
+pb "github.com/AndrewTarev/proto-repo/gen/exchange"
+```
