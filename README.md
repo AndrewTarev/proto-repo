@@ -6,3 +6,12 @@ gen-proto:
 			--go-grpc_out=./gen/			    # куда будет скомпилирован протофайл exchange_grpc.pb.go
 			--go-grpc_opt=paths=source_relative \
 ```
+
+После каких либо изменений, не забудь проверсионировать свой код:
+```
+- git tag v0.0.1
+- git push origin v0.0.1
+```
+
+В своем проекте установи пакет с этим репозиторием:
+- `go get github.com/AndrewTarev/proto-repo`
