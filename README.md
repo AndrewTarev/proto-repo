@@ -1,3 +1,10 @@
+1. Чтобы скомпилировать протофайл, сначало необходимо установить на компьютер приложение protobuf:
+```
+brew install protobuf
+protoc --version
+```
+
+2. Затем выполните команду из Makefile
 ```
 gen-proto:
 	protoc -I proto proto/exchange/*.proto			    # путь до файла *.proto
@@ -7,21 +14,21 @@ gen-proto:
 			--go-grpc_opt=paths=source_relative \
 ```
 
-В файле go.mod название модуля должно быть ссылкой на репо в гите:
+3. В файле go.mod название модуля должно быть ссылкой на репо в гите:
 ```
 module github.com/AndrewTarev/proto-repo
 ```
 
-После каких либо изменений, не забудь проверсионировать свой код:
+4. После каких либо изменений, не забудь проверсионировать свой код:
 ```
 git tag v0.0.1
 git push origin v0.0.1
 ```
 
-В своем проекте установи пакет с этим репозиторием:
+5. В своем проекте установи пакет с этим репозиторием:
 - `go get github.com/AndrewTarev/proto-repo`
 
-Затем импортируйте в проекте сгенерированные файлы:
+6. Затем импортируйте в проекте сгенерированные файлы:
 ```
-pb "github.com/AndrewTarev/proto-repo/gen/exchange"
+exch "github.com/AndrewTarev/proto-repo/gen/exchange"
 ```
