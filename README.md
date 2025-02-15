@@ -7,10 +7,15 @@ gen-proto:
 			--go-grpc_opt=paths=source_relative \
 ```
 
+В файле go.mod название модуля должно быть ссылкой на репо в гите:
+```
+module github.com/AndrewTarev/proto-repo
+```
+
 После каких либо изменений, не забудь проверсионировать свой код:
 ```
-- git tag v0.0.1
-- git push origin v0.0.1
+git tag v0.0.1
+git push origin v0.0.1
 ```
 
 В своем проекте установи пакет с этим репозиторием:
